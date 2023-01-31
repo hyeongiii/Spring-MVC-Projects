@@ -17,6 +17,7 @@ class UserTest {
 
         // when
         user.initPassword(new CorrectFixedPasswordGenerator());
+//        user.initPassword(() -> "abcedfgh");     -> Functional Interface 를 구현한 구현체이기 때문에 람다식 사용하는 것도 가능하다.
 
         // then
         // 테스트가 실패할 때도 있고, 성공할 때도 있다.
@@ -32,6 +33,7 @@ class UserTest {
 
         // when
         user.initPassword(new WrongFixedPasswordGenerator());
+//        user.initPassword(() -> "ab");    -> Functional Interface 를 구현한 구현체이기 때문에 람다식을 사용하는 것도 가능하다.
 
         // then
         // 테스트가 실패할 때도 있고, 성공할 때도 있다.
