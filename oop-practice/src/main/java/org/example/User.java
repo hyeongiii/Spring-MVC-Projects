@@ -11,7 +11,11 @@ public class User {
 
     // if 구문의 조건에 해당할 경우에만, password 로 세팅한다.
     public void initPassword(PasswordGenerator passwordGenerator) {
+        // as-is : 강한 결합
 //        RandomPasswordGenerator randomPasswordGenerator = new RandomPasswordGenerator();
+
+        // to-be : 약한 결합
+        // 내부에서 RandomPasswordGenerator 를 메소드 내부에서 생성하면 import 구문과 함께 결합을 강하게 만들지만, 리팩토링을 통해 인터페이스를 사용함으로써 결합도를 낮춰주었다.
         String password = passwordGenerator.generatePassword();
 
         /**
